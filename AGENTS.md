@@ -27,3 +27,4 @@ The following rules are critical — violations are considered bugs:
 9. **Public redirect route** — `/r/[slug]` must remain publicly accessible (no auth guard) for link redirects to work.
 10. **Lint before committing** — Run `npm run lint` and resolve all errors.
 11. **shadcn/ui only** — All UI must use shadcn/ui components. Never build custom component primitives or use other component libraries. Add new components with `npx shadcn@latest add <name>`.
+12. **No `middleware.ts`** — `middleware.ts` is deprecated in Next.js 16 (the version used in this project). **Never create or modify `middleware.ts`**. Use `proxy.ts` instead for all proxy and middleware logic.
