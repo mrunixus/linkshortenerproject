@@ -1,16 +1,6 @@
 # Agent Instructions — Link Shortener Project
 
-This file is the entry point for LLM agent instructions. All coding standards, conventions, and architectural decisions for this project are documented here and in the `/docs` directory.
-
-> [!CAUTION]
-> **MANDATORY — NO EXCEPTIONS:** You MUST read every relevant file in the `/docs` directory **before writing, modifying, or generating any code whatsoever**. This is not optional. Generating code without first reading the applicable docs is a critical violation. If a task touches authentication, read `docs/authentication.md`. If it touches UI, read `docs/ui-components.md`. When in doubt, read all docs files.
-
-## Docs Index
-
-| File | Purpose |
-|---|---|
-| [docs/authentication.md](docs/authentication.md) | Clerk authentication rules: protected routes, modal sign-in/out, server vs. client helpers, middleware setup |
-| [docs/ui-components.md](docs/ui-components.md) | shadcn/ui usage rules: install via CLI, no custom primitives, wrapping conventions, theming |
+This file is the entry point for LLM agent instructions. All coding standards, conventions, and architectural decisions for this project are documented.
 
 ## Quick-Reference Rules
 
@@ -28,3 +18,4 @@ The following rules are critical — violations are considered bugs:
 10. **Lint before committing** — Run `npm run lint` and resolve all errors.
 11. **shadcn/ui only** — All UI must use shadcn/ui components. Never build custom component primitives or use other component libraries. Add new components with `npx shadcn@latest add <name>`.
 12. **No `middleware.ts`** — `middleware.ts` is deprecated in Next.js 16 (the version used in this project). **Never create or modify `middleware.ts`**. Use `proxy.ts` instead for all proxy and middleware logic.
+13. **Server actions for all mutations** — All data mutations must use server actions. See [server-actions.instructions.md](.github/instructions/server-actions.instructions.md) for full rules (file naming, auth checks, Zod validation, `/data` helper usage).

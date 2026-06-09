@@ -1,3 +1,7 @@
+---
+description: Read this before implementing or modifying authentication in the project. This file defines the authentication rules and best practices for the project, which uses Clerk for all auth needs.
+---
+
 # Authentication — Clerk
 
 All authentication in this project is handled exclusively by **Clerk** (`@clerk/nextjs`).  
